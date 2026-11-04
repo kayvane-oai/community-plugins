@@ -12,3 +12,13 @@ test('cold Explorer package retains full third-party license notices', async () 
   assert.match(notices, /THE SOFTWARE IS PROVIDED "AS IS"/);
   assert.doesNotMatch(notices, /\/Users\/|internal\.api\.openai\.org/);
 });
+
+test('public lockfile contains canonical registry tarball URLs', async () => {
+  const lock = JSON.parse(await readFile(new URL('../package-lock.json', import.meta.url), 'utf8'));
+  for (const [location, dependency] of Object.entries(lock.packages)) {
+    if (!dependency.resolved) continue;
+    const name = location.split('node_modules/').at(-1);
+    const basename = name.split('/').at(-1);
+    assert.equal(dependency.resolved, `https://registry.npmjs.org/${name}/-/${basename}-${dependency.version}.tgz`);
+  }
+});
