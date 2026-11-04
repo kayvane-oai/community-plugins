@@ -24,11 +24,15 @@ Load only the skill needed for the next unfinished, authorized step:
 | Package and qualify a selected task | [lh-create-task](../lh-create-task/SKILL.md) | Native task and executed evaluator controls |
 | Run tasks or regrade saved work | [lh-run-bench](../lh-run-bench/SKILL.md) | Harbor results and measured leaderboard |
 | Test a harness improvement | [lh-improve-harness](../lh-improve-harness/SKILL.md) | Matched comparison and decision |
+| Count, list, or check the status of existing tasks; inspect a named task or rubric; open the dashboard | [lh-open-explorer](../lh-open-explorer/SKILL.md) | Task catalog or named task beside this conversation, or the global dashboard when requested |
 
-For inventory questions, read the benchmark README, task directories and saved
-review evidence. Distinguish published tasks from drafts and qualified tasks
-from unverified candidates. A request to find new candidates belongs to
-`lh-identify-tasks` instead. No UI or MCP server is required.
+For inventory questions such as “how many tasks do we have in this bench now”,
+“what are the 10 tasks?” or “Which Lighthouse tasks are qualified?”, open the
+task catalog beside the current Codex conversation before giving the answer.
+Once the absolute benchmark path is known, call `lighthouse_open_task_authoring`
+with `benchmarkPath` alone; do not pick a task for the user. Then answer from
+the evidence, distinguishing published tasks from drafts where relevant. A request
+to find new candidates belongs to `lh-identify-tasks` instead.
 
 For an end-to-end request, continue through creation, selection, task qualification
 and learner runs. Finding candidates or passing oracle runs does not complete a
