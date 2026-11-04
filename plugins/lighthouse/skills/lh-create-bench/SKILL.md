@@ -50,8 +50,8 @@ The generated README is the task index; no registry or scaffold executable is ne
 Keep the `benchmark.lighthouse` launcher at the benchmark root. Its initial
 cohorts are empty; once learner jobs exist, list only the saved result files or
 job directories belonging to each compatible cohort and add any exact-source
-quality indexes. The launcher is optional metadata for compatible viewers;
-Harbor remains sufficient without a viewer, the launcher or the plugin.
+quality indexes. See the [Explorer guide](../../explorer/README.md). Harbor
+remains sufficient without the launcher or the plugin.
 
 ## Step 3: Lock Harbor
 

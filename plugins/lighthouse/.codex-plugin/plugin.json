@@ -6,6 +6,7 @@
     "name": "Lighthouse contributors"
   },
   "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
   "repository": "https://github.com/openai/community-plugins",
   "license": "MIT",
   "interface": {
@@ -18,6 +19,7 @@
     "logo": "./assets/lighthouse-icon.svg",
     "logoDark": "./assets/lighthouse-icon-dark.svg",
     "capabilities": [
+      "Interactive",
       "Read",
       "Write"
     ],
